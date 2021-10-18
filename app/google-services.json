@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "248476510780",
+    "firebase_url": "https://vishwashanticafe-24034-default-rtdb.firebaseio.com",
+    "project_id": "vishwashanticafe-24034",
+    "storage_bucket": "vishwashanticafe-24034.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248476510780:android:77d79980803516e3d07139",
+        "android_client_info": {
+          "package_name": "com.miu.vishwashanticafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248476510780-gpfuqfpsv53f5rrd33tqu311sefe3rt7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6JtAgrc4bcfZZGddkVXrGmTA4hdwECnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248476510780-gpfuqfpsv53f5rrd33tqu311sefe3rt7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
