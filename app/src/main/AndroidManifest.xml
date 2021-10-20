@@ -14,16 +14,22 @@
         android:theme="@style/Theme.VishwaShantiCafe">
         <activity android:name="com.miu.vishwashanticafe.ContactUsActivity"></activity>
         <activity android:name="com.miu.vishwashanticafe.SettingsActivity" />
+        <activity android:name="com.miu.vishwashanticafe.MyCurrentOrdersActivity" />
+        <activity android:name="com.miu.vishwashanticafe.OrdersHistoryActivity" />
         <activity android:name="com.miu.vishwashanticafe.LoginUserActivity" />
         <activity android:name="com.miu.vishwashanticafe.RegisterUserActivity" />
         <activity android:name="com.miu.vishwashanticafe.GenderSelectionActivity" />
         <activity
             android:name="com.miu.vishwashanticafe.MainActivity"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name="com.miu.vishwashanticafe.OrderDoneActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name="com.miu.vishwashanticafe.PaymentActivity" />
         <activity android:name=".SearchMenuActivity" />
         <activity android:name="com.miu.vishwashanticafe.PreviewDetailsActivity" />
         <activity android:name="com.miu.vishwashanticafe.UserProfileActivity" />
+        <activity android:name="com.miu.vishwashanticafe.UserMenuOrderActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />

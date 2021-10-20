@@ -14,8 +14,6 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/statusBarBackground</item>
         <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
 
-        <!-- Customize your theme here. -->
-
         <!-- Enable Window Content Transition -->
         <item name="android:windowActivityTransitions">true</item>
     </style>

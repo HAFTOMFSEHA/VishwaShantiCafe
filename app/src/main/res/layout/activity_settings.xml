@@ -160,6 +160,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_light_color"
                         android:text="@string/update_the_latest_food_menu_for_offline"
                         android:textSize="15sp"/>
 
@@ -213,34 +214,6 @@
                     android:layout_marginStart="25dp"/>
 
                 <LinearLayout
-                    android:id="@+id/settings_saved_cards_ll"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical"
-                    android:paddingHorizontal="25dp"
-                    android:paddingVertical="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?android:attr/selectableItemBackground">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/delete_saved_cards"
-                        android:textColor="#2B2A2A"
-                        android:textSize="18sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/remove_all_the_saved_cards"
-                        android:textSize="15sp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/settings_delete_order_history_ll"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -263,6 +236,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_light_color"
                         android:text="@string/remove_all_the_previous_orders_details"
                         android:textSize="15sp"/>
 
@@ -308,6 +282,7 @@
                         android:id="@+id/app_version_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_light_color"
                         android:text="@string/app_version_number"
                         android:textSize="15sp"/>
 

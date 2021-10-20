@@ -21,6 +21,14 @@
                     android:id="@+id/nav_profile"
                     android:icon="@drawable/ic_user"
                     android:title="@string/profile"/>
+                <item
+                    android:id="@+id/nav_my_orders"
+                    android:icon="@drawable/ic_my_orders"
+                    android:title="@string/my_orders"/>
+                <item
+                    android:id="@+id/nav_orders_history"
+                    android:icon="@drawable/ic_order_history"
+                    android:title="@string/orders_history"/>
             </menu>
         </item>
     </group>
@@ -34,6 +42,7 @@
                     android:id="@+id/nav_share_app"
                     android:icon="@drawable/ic_share"
                     android:title="@string/share_app"/>
+
                 <item
                     android:id="@+id/nav_contact_us"
                     android:icon="@drawable/ic_mobile"
@@ -41,6 +50,15 @@
             </menu>
         </item>
     </group>
+
+    <group
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings"/>
+    </group>
+
     <group
         android:id="@+id/nav_part_4"
         android:checkableBehavior="none">

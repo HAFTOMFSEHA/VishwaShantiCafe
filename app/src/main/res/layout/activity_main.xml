@@ -80,7 +80,7 @@
                 android:id="@+id/search_menu_items"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:queryHint="eg, Mango Shake, Burger"
+                android:queryHint="Search Here"
                 android:iconifiedByDefault="false"
                 app:voiceIcon="@drawable/ic_user"/>
 
@@ -420,6 +420,23 @@
                         tools:listitem="@layout/list_menu_item"
                         android:paddingBottom="100dp"
                         android:clipToPadding="false"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/left_corner_curve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:onClick="showBottomDialog">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="15dp"
+                        android:src="@drawable/ic_arrow_upward"/>
 
                 </LinearLayout>
 

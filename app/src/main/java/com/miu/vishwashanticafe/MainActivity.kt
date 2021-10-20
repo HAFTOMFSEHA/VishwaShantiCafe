@@ -278,7 +278,28 @@ class MainActivity : AppCompatActivity(), RecyclerFoodItemAdapter.OnItemClickLis
                     drawerLayout.closeDrawer(GravityCompat.START)
                     Handler().postDelayed({ openUserProfileActivity() }, drawerDelay)
                 }
-
+                R.id.nav_my_orders -> {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Handler().postDelayed({
+                        startActivity(
+                            Intent(
+                                this,
+                                MyCurrentOrdersActivity::class.java
+                            )
+                        )
+                    }, drawerDelay)
+                }
+                R.id.nav_orders_history -> {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Handler().postDelayed({
+                        startActivity(
+                            Intent(
+                                this,
+                                OrdersHistoryActivity::class.java
+                            )
+                        )
+                    }, drawerDelay)
+                }
                 R.id.nav_share_app -> {
                     shareApp()
                 }
@@ -293,7 +314,17 @@ class MainActivity : AppCompatActivity(), RecyclerFoodItemAdapter.OnItemClickLis
                         )
                     }, drawerDelay)
                 }
-
+                R.id.nav_settings -> {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    Handler().postDelayed({
+                        startActivity(
+                            Intent(
+                                this,
+                                SettingsActivity::class.java
+                            )
+                        )
+                    }, drawerDelay)
+                }
                 R.id.nav_log_out -> {
                     drawerLayout.closeDrawer(GravityCompat.START)
                     logOutUser()
@@ -329,7 +360,6 @@ class MainActivity : AppCompatActivity(), RecyclerFoodItemAdapter.OnItemClickLis
                 //removing tables
                 db.dropCurrentOrdersTable()
                 db.dropOrderHistoryTable()
-                db.clearSavedCards()
 
                 startActivity(Intent(this, LoginUserActivity::class.java))
                 finish()
@@ -343,11 +373,31 @@ class MainActivity : AppCompatActivity(), RecyclerFoodItemAdapter.OnItemClickLis
 
     private fun shareApp() {
         val message =
-            "Try Vishwa Shanti Cafe App on Google Play!\nhttps://play.google.com/store/apps/details?id=$packageName"
+            "Try out Vishwa Shanti Cafe App on Google Play!\nhttps://play.google.com/store/apps/details?id=$packageName"
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_TEXT, message)
         intent.type = "text/plain"
         startActivity(Intent.createChooser(intent, "Share To"))
+    }
+
+    fun showBottomDialog(view: View) {
+        val bottomDialog = BottomSheetSelectedItemDialog()
+        val bundle = Bundle()
+
+        var totalPrice = 0.0f
+        var totalItems = 0
+
+        for (item in db.readCartData()) {
+            totalPrice += item.itemPrice
+            totalItems += item.quantity
+        }
+
+        bundle.putFloat("totalPrice", totalPrice)
+        bundle.putInt("totalItems", totalItems)
+        // bundle.putParcelableArrayList("orderedList", recyclerFoodAdapter.getOrderedList() as ArrayList<out Parcelable?>?)
+
+        bottomDialog.arguments = bundle
+        bottomDialog.show(supportFragmentManager, "BottomSheetDialog")
     }
 
     private fun openUserProfileActivity() {

@@ -244,7 +244,57 @@ class DatabaseHandler(val context: Context) : SQLiteOpenHelper(context, DATABASE
         }
     }
 
+    fun insertCurrentOrdersData(item: CurrentOrderItem) {
+        val db = this.writableDatabase
+        val cv = ContentValues()
 
+        cv.put(COL_CURRENT_ORDER_ID, item.orderID)
+        cv.put(COL_CURRENT_ORDER_TAKE_AWAY_TIME, item.takeAwayTime)
+        cv.put(COL_CURRENT_ORDER_PAYMENT_STATUS, item.paymentStatus)
+        cv.put(COL_CURRENT_ORDER_ITEM_NAMES, item.orderItemNames)
+        cv.put(COL_CURRENT_ORDER_ITEM_QUANTITIES, item.orderItemQuantities)
+        cv.put(COL_CURRENT_ORDER_TOTAL_ITEM_PRICE, item.totalItemPrice)
+        cv.put(COL_CURRENT_ORDER_TAX, item.tax)
+        cv.put(COL_CURRENT_ORDER_SUB_TOTAL, item.subTotal)
+
+        val result = db.insert(CURRENT_ORDER_TABLE_NAME, null, cv)
+        if (result == (-1).toLong()) {
+            Toast.makeText(context, "Failed to Insert Data", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun readCurrentOrdersData(): MutableList<CurrentOrderItem> {
+        val list: MutableList<CurrentOrderItem> = ArrayList()
+
+        val db = this.readableDatabase
+        val query = "SELECT * from $CURRENT_ORDER_TABLE_NAME"
+        val result = db.rawQuery(query, null)
+
+        if (result.moveToFirst()) {
+            do {
+                val item = CurrentOrderItem()
+                item.orderID = result.getString(result.getColumnIndex(COL_CURRENT_ORDER_ID))
+                item.takeAwayTime =
+                    result.getString(result.getColumnIndex(COL_CURRENT_ORDER_TAKE_AWAY_TIME))
+                item.paymentStatus =
+                    result.getString(result.getColumnIndex(COL_CURRENT_ORDER_PAYMENT_STATUS))
+                item.orderItemNames =
+                    result.getString(result.getColumnIndex(COL_CURRENT_ORDER_ITEM_NAMES))
+                item.orderItemQuantities =
+                    result.getString(result.getColumnIndex(COL_CURRENT_ORDER_ITEM_QUANTITIES))
+                item.totalItemPrice =
+                    result.getString(result.getColumnIndex(COL_CURRENT_ORDER_TOTAL_ITEM_PRICE))
+                item.tax = result.getString(result.getColumnIndex(COL_CURRENT_ORDER_TAX))
+                item.subTotal = result.getString(result.getColumnIndex(COL_CURRENT_ORDER_SUB_TOTAL))
+                list.add(item)
+            } while (result.moveToNext())
+        }
+
+        result.close()
+        db.close()
+
+        return list
+    }
 
     fun deleteCurrentOrderRecord(orderId: String): String {
         val query = "DELETE FROM $CURRENT_ORDER_TABLE_NAME WHERE $COL_CURRENT_ORDER_ID='$orderId';"
@@ -269,6 +319,47 @@ class DatabaseHandler(val context: Context) : SQLiteOpenHelper(context, DATABASE
         }
     }
 
+    fun insertOrderData(item: OrderHistoryItem) {
+        val db = this.writableDatabase
+        val cv = ContentValues()
+
+        cv.put(COL_ORDER_DATE, item.date)
+        cv.put(COL_ORDER_ID, item.orderId)
+        cv.put(COL_ORDER_STATUS, item.orderStatus)
+        cv.put(COL_ORDER_PAYMENT, item.orderPayment)
+        cv.put(COL_ORDER_PRICE, item.price)
+
+        val result = db.insert(ORDER_HISTORY_TABLE_NAME, null, cv)
+        if (result == (-1).toLong()) {
+            Toast.makeText(context, "Failed to Insert Data", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun readOrderData(): MutableList<OrderHistoryItem> {
+        val list: MutableList<OrderHistoryItem> = ArrayList()
+
+        val db = this.readableDatabase
+        val query = "SELECT * from $ORDER_HISTORY_TABLE_NAME"
+        val result = db.rawQuery(query, null)
+
+        if (result.moveToFirst()) {
+            do {
+                val item = OrderHistoryItem()
+                item.date = result.getString(result.getColumnIndex(COL_ORDER_DATE))
+                item.orderId = result.getString(result.getColumnIndex(COL_ORDER_ID))
+                item.orderStatus = result.getString(result.getColumnIndex(COL_ORDER_STATUS))
+                item.orderPayment = result.getString(result.getColumnIndex(COL_ORDER_PAYMENT))
+                item.price = result.getString(result.getColumnIndex(COL_ORDER_PRICE))
+                item.id = result.getString(result.getColumnIndex(COL_ID)).toInt()
+                list.add(item)
+            } while (result.moveToNext())
+        }
+
+        result.close()
+        db.close()
+
+        return list
+    }
 
     fun dropOrderHistoryTable() {
         try {
@@ -278,6 +369,55 @@ class DatabaseHandler(val context: Context) : SQLiteOpenHelper(context, DATABASE
         } catch (e: Exception) {
             Toast.makeText(context, "Unable to delete the records", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun insertSavedCardDetails(item: SavedCardItem): Int {
+        val db = this.writableDatabase
+
+        val query =
+            "SELECT * FROM $SAVED_CARDS_TABLE_NAME WHERE $COL_SAVED_CARD_NUMBER='${item.cardNumber}';"
+        val cursor = db.rawQuery(query, null);
+        if (cursor.count > 0) { //card is already saved
+            cursor.close();
+            return -1;
+        }
+        cursor.close();
+
+        val cv = ContentValues()
+        cv.put(COL_SAVED_CARD_NUMBER, item.cardNumber)
+        cv.put(COL_SAVED_CARD_HOLDER_NAME, item.cardHolderName)
+        cv.put(COL_SAVED_CARD_EXPIRY_DATE, item.cardExpiryDate)
+
+        val result = db.insert(SAVED_CARDS_TABLE_NAME, null, cv)
+        if (result == (-1).toLong()) {
+            Toast.makeText(context, "Card Not Saved", Toast.LENGTH_SHORT).show()
+        }
+        return 1
+    }
+
+    fun readSavedCardsData(): MutableList<SavedCardItem> {
+        val list: MutableList<SavedCardItem> = ArrayList()
+
+        val db = this.readableDatabase
+        val query = "SELECT * from $SAVED_CARDS_TABLE_NAME"
+        val result = db.rawQuery(query, null)
+
+        if (result.moveToFirst()) {
+            do {
+                val item = SavedCardItem()
+                item.cardNumber = result.getString(result.getColumnIndex(COL_SAVED_CARD_NUMBER))
+                item.cardHolderName =
+                    result.getString(result.getColumnIndex(COL_SAVED_CARD_HOLDER_NAME))
+                item.cardExpiryDate =
+                    result.getString(result.getColumnIndex(COL_SAVED_CARD_EXPIRY_DATE))
+                list.add(item)
+            } while (result.moveToNext())
+        }
+
+        result.close()
+        db.close()
+
+        return list
     }
 
     fun clearSavedCards() {

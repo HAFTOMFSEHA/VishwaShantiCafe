@@ -24,7 +24,6 @@ class SettingsActivity : AppCompatActivity(), MenuApi {
     private lateinit var updateMenuLL: LinearLayout
     private lateinit var deleteMenuLL: LinearLayout
 
-    private lateinit var deleteSavedCardsLL: LinearLayout
     private lateinit var deleteOrdersHistoryLL: LinearLayout
 
     private lateinit var sharedPref: SharedPreferences
@@ -49,9 +48,6 @@ class SettingsActivity : AppCompatActivity(), MenuApi {
         deleteMenuLL = findViewById(R.id.settings_delete_menu_ll)
         deleteMenuLL.setOnClickListener { deleteOfflineMenu() }
 
-        deleteSavedCardsLL = findViewById(R.id.settings_saved_cards_ll)
-        deleteSavedCardsLL.setOnClickListener { deleteAllTheSavedCards() }
-
         deleteOrdersHistoryLL = findViewById(R.id.settings_delete_order_history_ll)
         deleteOrdersHistoryLL.setOnClickListener { deleteAllTheOrdersHistoryDetails() }
 
@@ -67,18 +63,6 @@ class SettingsActivity : AppCompatActivity(), MenuApi {
             .setMessage("Are you sure you want to delete all the previous order details?")
             .setPositiveButton("Yes, Delete All", DialogInterface.OnClickListener {dialogInterface, _ ->
                 db.dropOrderHistoryTable()
-                db.close()
-                dialogInterface.dismiss()
-            })
-            .create().show()
-    }
-
-    private fun deleteAllTheSavedCards() {
-        val db = DatabaseHandler(this)
-        AlertDialog.Builder(this)
-            .setMessage("Are you sure you want to delete all the saved cards?")
-            .setPositiveButton("Yes, Delete All", DialogInterface.OnClickListener {dialogInterface, _ ->
-                db.clearSavedCards()
                 db.close()
                 dialogInterface.dismiss()
             })

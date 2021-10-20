@@ -4,8 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.3333333333333333" />
+        <entry key="app/src/main/res/drawable/ic_food_menu.xml" value="0.3625" />
+        <entry key="app/src/main/res/drawable/ic_log_out.xml" value="0.3625" />
         <entry key="app/src/main/res/drawable/ic_message.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/drawable/ic_mobile.xml" value="0.3333333333333333" />
+        <entry key="app/src/main/res/drawable/ic_my_orders.xml" value="0.3625" />
+        <entry key="app/src/main/res/drawable/ic_order_history.xml" value="0.3625" />
+        <entry key="app/src/main/res/drawable/ic_report_bug.xml" value="0.3625" />
+        <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.3625" />
+        <entry key="app/src/main/res/drawable/ic_share.xml" value="0.3625" />
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/drawable/payment_wallet.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/activity_contact_us.xml" value="0.3463541666666667" />
@@ -30,7 +37,7 @@
         <entry key="app/src/main/res/layout/popup_forgot_password.xml" value="0.3463541666666667" />
         <entry key="app/src/main/res/layout/saved_card_item.xml" value="0.3463541666666667" />
         <entry key="app/src/main/res/layout/selected_menu_bottom_dialog.xml" value="0.3463541666666667" />
-        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.33" />
       </map>
     </option>
   </component>
