@@ -141,4 +141,8 @@
     <string name="default_date">09/23</string>
     <string name="hello">Hello!</string>
     <string name="show_this_qr_code_to_your_office_canteen">Show this QR Code to your Canteen</string>
+    <string name="drinks">Drinks</string>
+    <string name="sides">Sides</string>
+    <string name="pasta">Pasta</string>
+    <string name="desserts">Desserts</string>
 </resources>

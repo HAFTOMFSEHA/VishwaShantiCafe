@@ -150,107 +150,6 @@
                                 <ImageView
                                     android:layout_width="@dimen/category_item_image_width"
                                     android:layout_height="@dimen/category_item_image_height"
-                                    android:src="@drawable/cold_drink" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    android:text="@string/cold_drink"
-                                    android:textSize="12sp"
-                                    android:fontFamily="@font/montserrat_semi_bold"/>
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="20dp"
-                                android:orientation="vertical"
-                                android:gravity="center_horizontal"
-                                android:onClick="showTagItems"
-                                android:clickable="true"
-                                android:focusable="true">
-
-                                <ImageView
-                                    android:layout_width="@dimen/category_item_image_width"
-                                    android:layout_height="@dimen/category_item_image_height"
-                                    android:src="@drawable/fruit" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    android:text="@string/fruits"
-                                    android:textSize="12sp"
-                                    android:fontFamily="@font/montserrat_semi_bold"/>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="20dp"
-                                android:orientation="vertical"
-                                android:gravity="center_horizontal"
-                                android:onClick="showTagItems"
-                                android:clickable="true"
-                                android:focusable="true">
-
-                                <ImageView
-                                    android:layout_width="@dimen/category_item_image_width"
-                                    android:layout_height="@dimen/category_item_image_height"
-                                    android:src="@drawable/burger" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    android:text="Burger"
-                                    android:textSize="12sp"
-                                    android:fontFamily="@font/montserrat_semi_bold"/>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="20dp"
-                                android:orientation="vertical"
-                                android:gravity="center_horizontal"
-                                android:onClick="showTagItems"
-                                android:clickable="true"
-                                android:focusable="true">
-
-                                <ImageView
-                                    android:layout_width="@dimen/category_item_image_width"
-                                    android:layout_height="@dimen/category_item_image_height"
-                                    android:src="@drawable/cake" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    android:text="@string/cake"
-                                    android:textSize="12sp"
-                                    android:fontFamily="@font/montserrat_semi_bold"/>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="20dp"
-                                android:orientation="vertical"
-                                android:gravity="center_horizontal"
-                                android:onClick="showTagItems"
-                                android:clickable="true"
-                                android:focusable="true">
-
-                                <ImageView
-                                    android:layout_width="@dimen/category_item_image_width"
-                                    android:layout_height="@dimen/category_item_image_height"
                                     android:src="@drawable/pizza" />
 
                                 <TextView
@@ -277,13 +176,13 @@
                                 <ImageView
                                     android:layout_width="@dimen/category_item_image_width"
                                     android:layout_height="@dimen/category_item_image_height"
-                                    android:src="@drawable/snacks" />
+                                    android:src="@drawable/cold_drink" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
-                                    android:text="@string/snacks"
+                                    android:text="@string/drinks"
                                     android:textSize="12sp"
                                     android:fontFamily="@font/montserrat_semi_bold"/>
 
@@ -302,13 +201,13 @@
                                 <ImageView
                                     android:layout_width="@dimen/category_item_image_width"
                                     android:layout_height="@dimen/category_item_image_height"
-                                    android:src="@drawable/thali" />
+                                    android:src="@drawable/cake" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
-                                    android:text="@string/thali"
+                                    android:text="@string/sides"
                                     android:textSize="12sp"
                                     android:fontFamily="@font/montserrat_semi_bold"/>
 
@@ -327,17 +226,19 @@
                                 <ImageView
                                     android:layout_width="@dimen/category_item_image_width"
                                     android:layout_height="@dimen/category_item_image_height"
-                                    android:src="@drawable/soup" />
+                                    android:src="@drawable/pasta" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
-                                    android:text="@string/soup"
+                                    android:text="@string/pasta"
                                     android:textSize="12sp"
                                     android:fontFamily="@font/montserrat_semi_bold"/>
 
+
                             </LinearLayout>
+
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -352,13 +253,13 @@
                                 <ImageView
                                     android:layout_width="@dimen/category_item_image_width"
                                     android:layout_height="@dimen/category_item_image_height"
-                                    android:src="@drawable/noodles" />
+                                    android:src="@drawable/coffee" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
-                                    android:text="@string/noodles"
+                                    android:text="@string/desserts"
                                     android:textSize="12sp"
                                     android:fontFamily="@font/montserrat_semi_bold"/>
 

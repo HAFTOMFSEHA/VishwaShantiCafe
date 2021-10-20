@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.VishwaShantiCafe">
+
         <activity android:name="com.miu.vishwashanticafe.ContactUsActivity"></activity>
         <activity android:name="com.miu.vishwashanticafe.SettingsActivity" />
         <activity android:name="com.miu.vishwashanticafe.MyCurrentOrdersActivity" />
